@@ -1,9 +1,0 @@
-Main(){
-   printf "hello world"
-}
-method(){
-   printf "xxxx"
-}
-show(){
-   show xxx
-}

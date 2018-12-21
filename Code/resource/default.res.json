@@ -1,0 +1,281 @@
+{
+	"groups": [
+		{
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,login_json,dl_d_01_png,dl_d_02_png,dl_d_05_png,dl_d_06_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "skin/login/login.json",
+			"type": "sheet",
+			"name": "login_json",
+			"subkeys": "dl_an_01,dl_an_010,dl_an_02,dl_an_03,dl_an_04,dl_an_05,dl_an_06,dl_an_07,dl_an_11,dl_d_03,dl_d_04,dl_jdt_01,dl_jdt_02,dl_jdt_03,dl_logo_01,dl_tb_01,dl_tb_06,dl_tb_11,dl_tb_12,dl_tb_13,dl_tb_14,dl_z_11,dl_z_12,dl_z_13,z_denglu_11"
+		},
+		{
+			"url": "skin/login/BtnBack.exml",
+			"type": "bin",
+			"name": "BtnBack_exml"
+		},
+		{
+			"url": "skin/login/BtnRecentLand.exml",
+			"type": "bin",
+			"name": "BtnRecentLand_exml"
+		},
+		{
+			"url": "skin/login/BtnSever.exml",
+			"type": "bin",
+			"name": "BtnSever_exml"
+		},
+		{
+			"url": "skin/login/SeverItem.exml",
+			"type": "bin",
+			"name": "SeverItem_exml"
+		},
+		{
+			"url": "skin/login/SeverSkin.exml",
+			"type": "bin",
+			"name": "SeverSkin_exml"
+		},
+		{
+			"url": "skin/login/BtnSeverSkin.exml",
+			"type": "bin",
+			"name": "BtnSeverSkin_exml"
+		},
+		{
+			"url": "skin/login/SeverItemSkin.exml",
+			"type": "bin",
+			"name": "SeverItemSkin_exml"
+		},
+		{
+			"url": "skin/login/dl_d_01.png",
+			"type": "image",
+			"name": "dl_d_01_png"
+		},
+		{
+			"url": "skin/login/dl_d_02.png",
+			"type": "image",
+			"name": "dl_d_02_png"
+		},
+		{
+			"url": "skin/login/dl_d_05.png",
+			"type": "image",
+			"name": "dl_d_05_png"
+		},
+		{
+			"url": "skin/login/dl_d_06.png",
+			"type": "image",
+			"name": "dl_d_06_png"
+		},
+		{
+			"url": "skin/login/LoginNoticeSkin.exml",
+			"type": "bin",
+			"name": "LoginNoticeSkin_exml"
+		},
+		{
+			"url": "skin/login/LoginSkin.exml",
+			"type": "bin",
+			"name": "LoginSkin_exml"
+		},
+		{
+			"url": "skin/login/RESProgressSkin.exml",
+			"type": "bin",
+			"name": "RESProgressSkin_exml"
+		},
+		{
+			"url": "eui_skins/ButtonSkin.exml",
+			"type": "bin",
+			"name": "ButtonSkin_exml"
+		},
+		{
+			"url": "eui_skins/CheckBoxSkin.exml",
+			"type": "bin",
+			"name": "CheckBoxSkin_exml"
+		},
+		{
+			"url": "eui_skins/HScrollBarSkin.exml",
+			"type": "bin",
+			"name": "HScrollBarSkin_exml"
+		},
+		{
+			"url": "eui_skins/HSliderSkin.exml",
+			"type": "bin",
+			"name": "HSliderSkin_exml"
+		},
+		{
+			"url": "eui_skins/ItemRendererSkin.exml",
+			"type": "bin",
+			"name": "ItemRendererSkin_exml"
+		},
+		{
+			"url": "eui_skins/PanelSkin.exml",
+			"type": "bin",
+			"name": "PanelSkin_exml"
+		},
+		{
+			"url": "eui_skins/ProgressBarSkin.exml",
+			"type": "bin",
+			"name": "ProgressBarSkin_exml"
+		},
+		{
+			"url": "eui_skins/RadioButtonSkin.exml",
+			"type": "bin",
+			"name": "RadioButtonSkin_exml"
+		},
+		{
+			"url": "eui_skins/ScrollerSkin.exml",
+			"type": "bin",
+			"name": "ScrollerSkin_exml"
+		},
+		{
+			"url": "eui_skins/TextInputSkin.exml",
+			"type": "bin",
+			"name": "TextInputSkin_exml"
+		},
+		{
+			"url": "eui_skins/ToggleSwitchSkin.exml",
+			"type": "bin",
+			"name": "ToggleSwitchSkin_exml"
+		},
+		{
+			"url": "eui_skins/VScrollBarSkin.exml",
+			"type": "bin",
+			"name": "VScrollBarSkin_exml"
+		},
+		{
+			"url": "eui_skins/VSliderSkin.exml",
+			"type": "bin",
+			"name": "VSliderSkin_exml"
+		}
+	]
+}

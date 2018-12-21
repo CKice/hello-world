@@ -1,0 +1,4 @@
+class MaxPQ {
+	public constructor() {
+	}
+}

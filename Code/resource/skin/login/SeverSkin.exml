@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SeverSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="login_json.dl_d_04" x="0" y="0" scale9Grid="72,120,436,50" anchorOffsetY="0" height="861"/>
+	<e:TabBar id="tabSever" x="28" y="118" anchorOffsetY="0" selectedIndex="0" itemRendererSkinName="BtnSeverSkin">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:TabBar>
+	<e:Button id="btnBack" label="" x="500" y="849" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="login_json.dl_an_11" source.down="login_json.dl_an_11" source.disabled="login_json.dl_an_11"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Scroller id="scrollSever" width="334" height="694" x="232" y="110" enabled="true">
+	<e:List id="listSever" width="334" height="440" x="1" y="-1" anchorOffsetY="0" itemRendererSkinName="SeverItem"></e:List>
+	</e:Scroller>
+	<w:Config id="167a62de44e"/>
+</e:Skin>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoginNoticeSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="dl_d_02_png"/>
+	<e:Label id="labInfo" text="各位少侠：\n     为了游戏更好的体验，我们计划2018你那3月29日16:00-3月29日18:00进行全服停机维护，" y="197" textAlign="left" anchorOffsetX="0" width="390" size="20" lineSpacing="10" horizontalCenter="0"/>
+	<e:Label id="labInfo0" text="更新公告" y="148" textAlign="left" anchorOffsetX="0" size="20" lineSpacing="10" horizontalCenter="0" textColor="0xf2c134"/>
+	<e:Button id="btnBack" label="" x="485" y="733" enabled="true">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="login_json.dl_an_11" source.down="login_json.dl_an_11" source.disabled="login_json.dl_an_11"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label id="label" width="467" x="56" text="抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活。" size="14" anchorOffsetX="0" y="744" textAlign="center" textColor="0xd9ba81" lineSpacing="10" touchEnabled="false"/>
+</e:Skin>
