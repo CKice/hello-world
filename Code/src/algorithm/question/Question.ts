@@ -27,7 +27,7 @@ class Question {
         let right: number
         let index: number[];
         while (list.length > 0) {
-            index = list.pop();
+            index = list.shift();
             if (index[0] >= index[1]) {
                 break;
             }
@@ -91,22 +91,22 @@ class Question {
         fiveQue.push(5);
         let ugly: number = 0;
         for (let i = 1; i <= n; i++) {
-            if (twoQue.tail < threeQue.tail && twoQue.tail < fiveQue.tail) {
-                ugly = twoQue.pop();
+            if (twoQue.head() < threeQue.head() && twoQue.head() < fiveQue.head()) {
+                ugly = twoQue.shift();
                 console.log(ugly);
                 twoQue.push(ugly * 2)
                 threeQue.push(ugly * 3)
                 fiveQue.push(ugly * 5)
-            } else if (threeQue.tail < twoQue.tail && threeQue.tail < fiveQue.tail) {
-                ugly = threeQue.pop();
+            } else if (threeQue.head() < twoQue.head() && threeQue.head() < fiveQue.head()) {
+                ugly = threeQue.shift();
                 console.log(ugly);
                 // twoQue.push(ugly * 2)
                 threeQue.push(ugly * 3)
                 fiveQue.push(ugly * 5)
             } else {
-                ugly = fiveQue.pop();
+                ugly = fiveQue.shift();
                 console.log(ugly);
-                //    twoQue.push(ugly * 2)
+                // twoQue.push(ugly * 2)
                 // threeQue.push(ugly * 3)
                 fiveQue.push(ugly * 5)
             }

@@ -1,4 +1,5 @@
 class SortExample {
+	
 	public constructor() {
 	}
 

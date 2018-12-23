@@ -11,6 +11,10 @@ interface IDictionary {
 //集合
 class Dictionary implements IDictionary {
     private items: Object = {};
+
+    public constructor() {
+    }
+
     public set(key: any, value: any) {
         this.items[key] = value; //{1}
     };

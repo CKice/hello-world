@@ -1,6 +1,8 @@
 class TimeUtil {
+
     constructor() {
     }
+
     /*将秒数转换成时分秒*/
     public static secToTime(s: number): string {
         let t: string = "";
@@ -36,6 +38,7 @@ class TimeUtil {
         return s;
 
     }
+    
     /*获取xx年xx月xx日*/
     public static getDate(): string {
         let myDate = new Date(); //获取系统当前时间

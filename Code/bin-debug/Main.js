@@ -217,8 +217,9 @@ var Main = (function (_super) {
         // button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
         //  let sever:Sever = new Sever();
         // this.addChild(sever);
-        var test = new Test();
-        test.tree();
+        // let test = new Test();
+        // test.tree();
+        Test.testStack();
         // let game = new Game();
         // game.x = 0;
         // game.y = 0;

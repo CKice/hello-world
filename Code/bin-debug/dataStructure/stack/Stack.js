@@ -25,7 +25,7 @@ var Stack = (function () {
     Stack.prototype.size = function () {
         return this._size;
     };
-    Stack.prototype.empty = function () {
+    Stack.prototype.isEmpty = function () {
         return this._size == 0;
     };
     Stack.prototype.clear = function (capacity) {
@@ -36,5 +36,5 @@ var Stack = (function () {
     };
     return Stack;
 }());
-__reflect(Stack.prototype, "Stack");
+__reflect(Stack.prototype, "Stack", ["IStack"]);
 //# sourceMappingURL=Stack.js.map

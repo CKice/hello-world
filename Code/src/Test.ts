@@ -2,7 +2,7 @@ class Test {
 	private testStr: string[] = ["to", "be", "or", "not", "-", "be", "-", "-", "that", "-", "-", "-", "is"]
 	private nums: number[] = [60, 2, 58, 32, 105, 89, 75, 111, 236, 99, 100]
 	public constructor() {
-		this.aStar();
+		// this.aStar();
 	}
 
 	public testListStack() {
@@ -133,7 +133,10 @@ class Test {
 		console.log(Question.findUglyNumber(10))
 		// console.log(nums);
 		// console.log(nums)
+	}
 
+	public static testStack(){
+		console.log(MathUtil.baseConverter(256,2))
 	}
 }
 

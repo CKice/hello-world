@@ -5,7 +5,7 @@ var Test = (function () {
     function Test() {
         this.testStr = ["to", "be", "or", "not", "-", "be", "-", "-", "that", "-", "-", "-", "is"];
         this.nums = [60, 2, 58, 32, 105, 89, 75, 111, 236, 99, 100];
-        this.aStar();
+        // this.aStar();
     }
     Test.prototype.testListStack = function () {
         // let que = new ListStack();
@@ -130,6 +130,9 @@ var Test = (function () {
         console.log(Question.findUglyNumber(10));
         // console.log(nums);
         // console.log(nums)
+    };
+    Test.testStack = function () {
+        console.log(MathUtil.baseConverter(256, 2));
     };
     return Test;
 }());
