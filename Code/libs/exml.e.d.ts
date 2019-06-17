@@ -50,19 +50,3 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare class BtnBack extends eui.Skin{
-}
-declare class BtnRecentLand extends eui.Skin{
-}
-declare class BtnSeverSkin extends eui.Skin{
-}
-declare class LoginNoticeSkin extends eui.Skin{
-}
-declare class LoginSkin extends eui.Skin{
-}
-declare class RESProgressSkin extends eui.Skin{
-}
-declare class SeverItemSkin extends eui.Skin{
-}
-declare class SeverSkin extends eui.Skin{
-}

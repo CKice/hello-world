@@ -41,7 +41,7 @@ var Question = (function () {
                 while (ids[left] < flag && right > left) {
                     left++;
                 }
-                SortExample.swap(ids, left, right);
+                Sort.swap(ids, left, right);
             }
             if (left == 0) {
                 if (ids.indexOf(flag) != -1) {
@@ -89,36 +89,31 @@ var Question = (function () {
     @ n:第几个
     */
     Question.findUglyNumber = function (n) {
-        var twoQue = new Queue();
-        twoQue.push(2);
-        var threeQue = new Queue();
-        threeQue.push(3);
-        var fiveQue = new Queue();
-        fiveQue.push(5);
+        // let twoQue: Queue<number> = new Queue<number>();
+        // twoQue.enQueue(2);
+        // let threeQue: Queue<number> = new Queue<number>();
+        // threeQue.enQueue(3);
+        // let fiveQue: Queue<number> = new Queue<number>();
+        // fiveQue.enQueue(5);
         var ugly = 0;
-        for (var i = 1; i <= n; i++) {
-            if (twoQue.tail < threeQue.tail && twoQue.tail < fiveQue.tail) {
-                ugly = twoQue.pop();
-                console.log(ugly);
-                twoQue.push(ugly * 2);
-                threeQue.push(ugly * 3);
-                fiveQue.push(ugly * 5);
-            }
-            else if (threeQue.tail < twoQue.tail && threeQue.tail < fiveQue.tail) {
-                ugly = threeQue.pop();
-                console.log(ugly);
-                // twoQue.push(ugly * 2)
-                threeQue.push(ugly * 3);
-                fiveQue.push(ugly * 5);
-            }
-            else {
-                ugly = fiveQue.pop();
-                console.log(ugly);
-                //    twoQue.push(ugly * 2)
-                // threeQue.push(ugly * 3)
-                fiveQue.push(ugly * 5);
-            }
-        }
+        // for (let i = 1; i <= n; i++) {
+        //     if (twoQue.front() < threeQue.front() && twoQue.front() < fiveQue.front()) {
+        //         ugly = twoQue.deQueue();
+        //         console.log(ugly);
+        //         twoQue.enQueue(ugly * 2)
+        //         threeQue.enQueue(ugly * 3)
+        //         fiveQue.enQueue(ugly * 5)
+        //     } else if (threeQue.front() < twoQue.front() && threeQue.front() < fiveQue.front()) {
+        //         ugly = threeQue.deQueue();
+        //         console.log(ugly);
+        //         threeQue.enQueue(ugly * 3)
+        //         fiveQue.enQueue(ugly * 5)
+        //     } else {
+        //         ugly = fiveQue.deQueue();
+        //         console.log(ugly);
+        //         fiveQue.enQueue(ugly * 5)
+        //     }
+        // }
         return ugly;
     };
     return Question;

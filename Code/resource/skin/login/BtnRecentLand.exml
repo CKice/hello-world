@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="BtnRecentLand" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down,disabled" >
-	<e:Image source="login_json.dl_an_02" includeIn="up,disabled"/>
-	<e:Image x="0" y="0" source="login_json.dl_an_03" includeIn="down"/>
-	<e:Label id="label" x.down="39" x.up="39" y="35" text.disabled="最近登录" textAlign.disabled="right" x.disabled="39" x="39" text="{data}"/>
-</e:Skin>

@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,login_json,dl_d_01_png,dl_d_02_png,dl_d_05_png,dl_d_06_png",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json",
 			"name": "preload"
 		}
 	],
@@ -137,12 +137,6 @@
 			"name": "description_json"
 		},
 		{
-			"url": "skin/login/login.json",
-			"type": "sheet",
-			"name": "login_json",
-			"subkeys": "dl_an_01,dl_an_010,dl_an_02,dl_an_03,dl_an_04,dl_an_05,dl_an_06,dl_an_07,dl_an_11,dl_d_03,dl_d_04,dl_jdt_01,dl_jdt_02,dl_jdt_03,dl_logo_01,dl_tb_01,dl_tb_06,dl_tb_11,dl_tb_12,dl_tb_13,dl_tb_14,dl_z_11,dl_z_12,dl_z_13,z_denglu_11"
-		},
-		{
 			"url": "skin/login/BtnBack.exml",
 			"type": "bin",
 			"name": "BtnBack_exml"
@@ -176,26 +170,6 @@
 			"url": "skin/login/SeverItemSkin.exml",
 			"type": "bin",
 			"name": "SeverItemSkin_exml"
-		},
-		{
-			"url": "skin/login/dl_d_01.png",
-			"type": "image",
-			"name": "dl_d_01_png"
-		},
-		{
-			"url": "skin/login/dl_d_02.png",
-			"type": "image",
-			"name": "dl_d_02_png"
-		},
-		{
-			"url": "skin/login/dl_d_05.png",
-			"type": "image",
-			"name": "dl_d_05_png"
-		},
-		{
-			"url": "skin/login/dl_d_06.png",
-			"type": "image",
-			"name": "dl_d_06_png"
 		},
 		{
 			"url": "skin/login/LoginNoticeSkin.exml",
