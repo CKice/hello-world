@@ -27,7 +27,7 @@ class Question {
         let right: number
         let index: number[];
         while (list.length > 0) {
-            index = list.shift();
+            index = list.pop();
             if (index[0] >= index[1]) {
                 break;
             }
@@ -40,7 +40,7 @@ class Question {
                 while (ids[left] < flag && right > left) {
                     left++;
                 }
-                SortExample.swap(ids, left, right)
+                Sort.swap(ids, left, right)
             }
             if (left == 0) {
                 if (ids.indexOf(flag) != -1) { return flag - 1; }
@@ -84,31 +84,28 @@ class Question {
     */
     public static findUglyNumber(n: number): number {
         let twoQue: Queue<number> = new Queue<number>();
-        twoQue.push(2);
+        twoQue.enQueue(2);
         let threeQue: Queue<number> = new Queue<number>();
-        threeQue.push(3);
+        threeQue.enQueue(3);
         let fiveQue: Queue<number> = new Queue<number>();
-        fiveQue.push(5);
+        fiveQue.enQueue(5);
         let ugly: number = 0;
         for (let i = 1; i <= n; i++) {
-            if (twoQue.head() < threeQue.head() && twoQue.head() < fiveQue.head()) {
-                ugly = twoQue.shift();
+            if (twoQue.front() < threeQue.front() && twoQue.front() < fiveQue.front()) {
+                ugly = twoQue.deQueue();
                 console.log(ugly);
-                twoQue.push(ugly * 2)
-                threeQue.push(ugly * 3)
-                fiveQue.push(ugly * 5)
-            } else if (threeQue.head() < twoQue.head() && threeQue.head() < fiveQue.head()) {
-                ugly = threeQue.shift();
+                twoQue.enQueue(ugly * 2)
+                threeQue.enQueue(ugly * 3)
+                fiveQue.enQueue(ugly * 5)
+            } else if (threeQue.front() < twoQue.front() && threeQue.front() < fiveQue.front()) {
+                ugly = threeQue.deQueue();
                 console.log(ugly);
-                // twoQue.push(ugly * 2)
-                threeQue.push(ugly * 3)
-                fiveQue.push(ugly * 5)
+                threeQue.enQueue(ugly * 3)
+                fiveQue.enQueue(ugly * 5)
             } else {
-                ugly = fiveQue.shift();
+                ugly = fiveQue.deQueue();
                 console.log(ugly);
-                // twoQue.push(ugly * 2)
-                // threeQue.push(ugly * 3)
-                fiveQue.push(ugly * 5)
+                fiveQue.enQueue(ugly * 5)
             }
         }
         return ugly;

@@ -3,9 +3,21 @@ class MathUtil {
 	public constructor() {
 	}
 
-	//以base为底num的对数
-	public static log(n: number, base: number) {
+	/**  
+	 * x=logaN，读作以a为底N的对数，其中a叫做对数的底数，N叫做真数
+	 * @param base 对数的底数
+	 * @param n    对数的真数
+	 */
+	public static log(base: number, n: number) {
 		return Math.log(n) / Math.log(base);
+	}
+	/**
+	 * 获取min和max之间的随机整数
+	 * @param min 最小数
+	 * @param max 最大数
+	 */
+	public static random(min: number, max: number) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
 	//十进制转任意进制
