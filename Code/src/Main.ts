@@ -105,7 +105,7 @@ class Main extends eui.UILayer {
         let arr = [64, 68, 34, 87, 78, 59, 68, 4, 7, 3, 6, 168, 979, 166, 478, 63, 74, 684, 34763]
         // Sort.merge(arr)
 
-        Sort.insert(arr)
+        Sort.heap(arr)
         console.log(arr);
     }
 

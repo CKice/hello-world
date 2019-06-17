@@ -8,7 +8,7 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
-		"bin-debug/dataStructure/heap/Heap.js",
+		"bin-debug/dataStructure/heap/MaxHeap.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
@@ -21,7 +21,6 @@
 		"bin-debug/algorithm/AStar/Grid.js",
 		"bin-debug/algorithm/question/Question.js",
 		"bin-debug/algorithm/sort/Sort.js",
-		"bin-debug/algorithm/sort/SortExample.js",
 		"bin-debug/components/Calendar.js",
 		"bin-debug/components/ItemDate.js",
 		"bin-debug/dataStructure/Iterator.js",
@@ -29,8 +28,8 @@
 		"bin-debug/dataStructure/hashMap/HashMap.js",
 		"bin-debug/dataStructure/hashMap/HashMapJava.js",
 		"bin-debug/dataStructure/hashMap/LinkedList.js",
+		"bin-debug/dataStructure/heap/Heap.js",
 		"bin-debug/LoadingUI.js",
-		"bin-debug/dataStructure/heap/MaxHeap.js",
 		"bin-debug/dataStructure/heap/MaxPQ.js",
 		"bin-debug/dataStructure/heap/MinHeap.js",
 		"bin-debug/dataStructure/linkedList/DoublyLinkedList.js",

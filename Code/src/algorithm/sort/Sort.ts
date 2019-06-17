@@ -249,7 +249,7 @@ class Sort {
 		this.LeftRightToMid(arr, left, i - 1);//继续处理左边的，这里是一个递归的过程 
 		this.LeftRightToMid(arr, i + 1, right);//继续处理右边的 ，这里是一个递归的过程 
 	}
-
+	//迭代快排
 	public static iteratorQuick(num: number[], left: number, right: number) {
 		let list: number[][] = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
 		while (list.length > 0) { // 若list不为空，循环弹出list最后一个数组进行快排
@@ -276,4 +276,21 @@ class Sort {
 			list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
 		}
 	}
+
+    /**
+	 * 堆排序  O(nlogn)
+	 */
+	public static heap(arr: number[]) {
+		let len = arr.length - 1;
+		MaxHeap.creat(arr, len)
+		for (let i = len; i > 0; i--) {
+			this.swap(arr, 0, i)
+			len--;
+			MaxHeap.creat(arr, len)
+		}
+	}
+
+	/**
+	 * 计数排序  O(nlogn)
+	 */
 }
