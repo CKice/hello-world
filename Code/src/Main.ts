@@ -106,7 +106,7 @@ class Main extends eui.UILayer {
         // Sort.merge(arr)
         // let arr = [2, 5, 7, 8, 8, 9, 6, 4, 7, 3, 6]
         console.log(arr);
-        Sort.base(arr)
+        Sort.bucket(arr)
         console.log(arr);
     }
 

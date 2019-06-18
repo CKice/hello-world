@@ -18,7 +18,7 @@ namespace linked {
                 if (this._head.next == null) {
                     this.tail = new ListNode(o);
                     this._head.next = this.tail;
-                    this.tail.parent = this._head;
+                    // this.tail.parent = this._head;
                     this._size += 1;
                 } else {
                     this.changeTail(o);
@@ -40,7 +40,7 @@ namespace linked {
             let node = this.tail;
             this.tail = new ListNode(o);
             node.next = this.tail;
-            this.tail.parent = node;
+            // this.tail.parent = node;
             this._size += 1;
         }
 
@@ -50,7 +50,7 @@ namespace linked {
         }
 
         public shift(): ListNode {
-            let node:ListNode= this._head;
+            let node: ListNode = this._head;
             this._head = node.next;
             this._size -= 1;
             return node
@@ -65,8 +65,8 @@ namespace linked {
         }
 
         public clear() {
-          this._head = null;
-          this.tail = null;
+            this._head = null;
+            this.tail = null;
         }
     }
 }
