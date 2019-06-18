@@ -290,7 +290,79 @@ class Sort {
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////////
+	//
+	//      非基于比较的排序  分布式排序
+	//
+	//////////////////////////////////////////////////////////////////////////////////////
 	/**
-	 * 计数排序  O(nlogn)
+	 * 计数排序  O(n) 适用于正整数并且取值范围相差不大的数组排序使用，它的排序的速度是非常可观的
 	 */
+	public static count(arr: number[]) {
+		let max = arr[0];
+		for (let i = 1; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+
+		//初始化计数数组
+		let countArr: number[] = [];
+		for (let i: number = 0; i < max + 1; i++) {
+			countArr.push(0);
+		}
+
+		//计数
+		for (let i = 0; i < arr.length; i++) {
+			countArr[arr[i]]++;
+			arr[i] = 0;
+		}
+
+		//排序
+		let index = 0;
+		for (let i = 0; i < countArr.length; i++) {
+			while (countArr[i] > 0) {
+				countArr[i]--;
+				arr[index++] = i;
+			}
+		}
+	}
+
+	/**
+	 * 桶排序  min:O(n)  max:O(nlogn)  可视为计数排序的升级
+	 */
+	public static bucket(arr: number[]) {
+		let max = arr[0];
+		let min = arr[0];
+		let length = arr.length;
+		let bucketNum = length;//桶的数量  设为数组大小 
+
+		for (let i = 1; i < length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			} else if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
+
+		//最大值和最小值的差
+		let diff = max - min;
+		let buckets = new Array<Array<number>>();
+		for (let i: number = 0; i < bucketNum; i++) {
+			buckets.push(new Array<number>());
+		}
+		//桶容量 
+		let capacity = diff / (bucketNum - 1);
+
+		//数据入桶
+		for (let i = 0; i < length; i++) {
+			//当前数除以区间得出存放桶的位置 减1后得出桶的下标
+			let num = Math.floor(arr[i] / capacity) - 1;
+			if (num < 0) {
+				num = 0;
+			}
+			// bucketList.get(num).add(arr[i]);
+		}
+
+	}
 }
