@@ -1,54 +1,83 @@
-// class HashMap {
-//     public constructor(){}
-//  13         let map = [];
-//  14         public keyValPair = function (key, value) {
-//  15              key = key;
-//  16              value = value;
-//  17         }
-//  18          put = function (key, value) {
-//  19             let position = djb2Code(key);
-//  20             if (map[position] == undefined) {
-//  21                 map[position] = new LinkedList();
-//  22             }
-//  23             map[position].append(new keyValPair(key, value));
-//  24         },
-//  25          get = function (key) {
-//  26             let position = djb2Code(key);
-//  27             if (map[position] != undefined) {
-//  28                 let current = map[position].getHead();
-//  29                 while (current.next) {
-//  30                     if (current.element.key === key) {  //严格判断
-//  31                         return current.element.value;
-//  32                     }
-//  33                     current = current.next;
-//  34                 }
-//  35                 if (current.element.key === key) {//如果只有head节点，则不会进while.  还有尾节点，不会进while,这个判断必不可少
-//  36                     return current.element.value;
-//  37                 }
-//  38             }
-//  39             return undefined;
-//  40         },
-//  41          remove = function (key) {
-//  42             let position = djb2Code(key);
-//  43             if (map[position] != undefined) {
-//  44                 let current = map[position].getHead();
-//  45                 while (current.next) {
-//  46                     if (current.element.key === key) {
-//  47                         map[position].remove(current.element);
-//  48                         if (map[position].isEmpty()) {
-//  49                             map[position] == undefined;
-//  50                         }
-//  51                         return true;
-//  52                     }
-//  53                     current = current.next;
-//  54                 }
-//  55                 if (current.element.key === key) {
-//  56                     map[position].remove(current.element);
-//  57                     if (map[position].isEmpty()) {
-//  58                         map[position] == undefined;
-//  59                     }
-//  60                     return true;
-//  61                 }
-//  62             }
-//  63         }
-//  64     }
+class HashMap {
+	private table = [];
+
+	public constructor() {
+	}
+
+	public loseloseHashCode = function (key) {
+		var hash = 5381; //{1}
+		for (var i = 0; i < key.length; i++) { //{2}
+			hash = hash * 33 + key.charCodeAt(i); //{3}
+		}
+		return hash % 1013; //{4}
+	};
+
+    /*线性探查:另一种解决冲突的方法是线性探查。当想向表中某个位置加入一个新元素的时候，如果索引
+	为index的位置已经被占据了，就尝试index+1的位置。如果index+1的位置也被占据了，就尝试
+	index+2的位置，以此类推。*/
+	//链地址解决冲突  
+	public put = function (key, value) {
+		let position = this.loseloseHashCode(key); //{5}
+		if (this.table[position] == undefined) { //{1}
+			this.table[position] = new LinkedList();
+		}
+		this.table[position].append(new ValuePair(key, value));
+	};
+
+	public get = function (key) {
+		let position = this.table[this.loseloseHashCode(key)];
+		if (this.table[position] !== undefined) { //{3}
+			//遍历链表来寻找键/值
+			let current: ListNode = this.table[position].getHead(); //{4}
+			while (current.next) { //{5}
+				if (current.element.key === key) { //{6}
+					return current.element.value; //{7}
+				}
+				current = current.next; //{8}
+			}
+			//检查元素在链表第一个或最后一个节点的情况
+			if (current.element.key === key) { //{9}
+				return current.element.value;
+			}
+		}
+		return undefined; //{10}
+	};
+
+	public remove = function (key) {
+		let position = this.loseloseHashCode(key);
+		if (this.table[position] !== undefined) {
+			let current = this.table[position].getHead();
+			while (current.next) {
+				if (current.element.key === key) { //{11}
+					this.table[position].remove(current.element); //{12}
+					if (this.table[position].isEmpty()) { //{13}
+						this.table[position] = undefined; //{14}
+					}
+					return true; //{15}
+				}
+				current = current.next;
+			}
+			// 检查是否为第一个或最后一个元素
+			if (current.element.key === key) { //{16}
+				this.table[position].remove(current.element);
+				if (this.table[position].isEmpty()) {
+					this.table[position] = undefined;
+				}
+				return true;
+			}
+		}
+		return false; //{17}
+	};
+}
+
+class ValuePair {
+	public key;
+	public value;
+	constructor(key, value) {
+		this.key = key;
+		this.value = value;
+		this.toString = function () {
+			return '[' + this.key + ' - ' + this.value + ']';
+		}
+	}
+};

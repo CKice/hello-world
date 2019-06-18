@@ -102,10 +102,11 @@ class Main extends eui.UILayer {
         // let ui = new Calendar()
         // this.stage.addChild(ui);
         // ui.showDate();
-        // let arr = [64, 68, 34, 87, 78, 59, 68, 4, 7, 3, 6, 168, 979, 166, 478, 63, 74, 684, 34763]
+        let arr = [64, 68, 34, 87, 78, 59, 68, 4, 7, 3, 6, 168, 979, 166, 478, 63, 74, 684, 34763]
         // Sort.merge(arr)
-        let arr = [2, 5, 7, 8, 8, 9, 6, 4, 7, 3, 6]
-        Sort.count(arr)
+        // let arr = [2, 5, 7, 8, 8, 9, 6, 4, 7, 3, 6]
+        console.log(arr);
+        Sort.base(arr)
         console.log(arr);
     }
 

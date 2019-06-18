@@ -15,7 +15,7 @@ class Dictionary implements IDictionary {
     public constructor() {
     }
 
-    public set(key: any, value: any) {
+    public set(key: string, value: any) {
         this.items[key] = value; //{1}
     };
 

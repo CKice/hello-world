@@ -1,95 +1,125 @@
-class LinkedList {
-    public length: number = 0;
-    public head: ListNode = null;
-    public constructor() {
-    }
+interface ILinkedList {
+	append(element: any): boolean
+	insert(position: number, element: any): boolean
+	removeAt(position: number): ListNode
+	remove(element: any): ListNode;
+	indexOf(element: number): number;
+	isEmpty(): boolean;
+	size(): number
+	getHead(): ListNode
+	toString(): string;
+}
 
-    public push(element: string) {
-        let node: ListNode = new ListNode(element)　　　　　　　//构造新的元素节点
-        let current: ListNode;
-        if (this.head === null) {　　　　　　　　　　　　　     //头节点为空时  当前结点作为头节点
-            this.head = node;
-        } else {
-            current = this.head;
-            while (current.next) {　　　　　　　　　　        //遍历，直到节点的next为null时停止循环，当前节点为尾节点
-                current = current.next;
-            }
-            current.next = node;　　　　　　　　　　　　      //将尾节点指向新的元素，新元素作为尾节点
-        }
-        this.length++;　　　　　　　　　　　　　　　　　　　　 //更新链表长度
-    }
-    public pop(position: number): string {
-        if (position > -1 && position < length) {
-            let current: ListNode = this.head;
-            let index: number = 0;
-            let previous: ListNode;
-            if (position == 0) {
-                this.head = current.next;
-            } else {
-                while (index++ < position) {
-                    previous = current;
-                    current = current.next;
-                }
-                previous.next = current.next;
-            }
-            length--;
-            return current.name;
-        } else {
-            return null;
-        }
-    };
-    public insert(position, element) {
-        if (position > -1 && position <= this.length) {　　　　　　　　//校验边界
-            let node: ListNode = new ListNode(element);
-            let current: ListNode = this.head;
-            let index: number = 0;
-            let previous: ListNode;
-            if (position == 0) {　　　　　　　　　　　　　　　　　　　　//作为头节点，将新节点的next指向原有的头节点。
-                node.next = current;
-                this.head = node;　　　　　　　　　　　　　　　　　　　//新节点赋值给头节点
-            } else {
-                while (index++ < position) {
-                    previous = current;
-                    current = current.next;
-                }　　　　　　　　　　　　　　　　　　　　　　　　　　　　//遍历结束得到当前position所在的current节点，和上一个节点
-                previous.next = node;　　　　　　　　　　　　　　　　　//上一个节点的next指向新节点  新节点指向当前结点，可以参照上图来看
-                node.next = current;
-            }
-            this.length++;
-            return true;
-        } else {
-            return false;
-        }
+class LinkedList implements ILinkedList {
+	private head: ListNode;
+	private length: number = 0;
+	public constructor() {
 
-    };
-    public toString(): string {
-        let current: ListNode = this.head;
-        let string: string = '';
-        while (current) {
-            string += ',' + current.name;
-            current = current.next;
-        }
-        return string;
-    };
-    public indexFor(element): number {
-        let current: ListNode = this.head;
-        let index: number = -1;
-        while (current) {
-            if (element === current.name) {　　　　　　　　　　　　//从头节点开始遍历
-                return index;
-            }
-            index++;
-            current = current.next;
-        }
-        return -1;
-    };
-    public getLength(): number {
-        return length;
-    };
-    public getHead(): ListNode {
-        return this.head;
-    };
-    public isEmpty(): boolean {
-        return length == 0;
-    }
+	}
+	public append(element: any): boolean {
+		let node = new ListNode(element), //{1}
+			current: ListNode; //{2}
+		if (this.head === null) { //列表中第一个节点 //{3}
+			this.head = node;
+		} else {
+			current = this.head; //{4}
+			//循环列表，直到找到最后一项
+			while (current.next) {
+				current = current.next;
+			}
+			//找到最后一项，将其next赋为node，建立链接
+			current.next = node; //{5}
+		}
+		this.length++; //更新列表的长度 //{6}
+		return true;
+	}
+
+	public removeAt(position: number): ListNode {
+		//检查越界值
+		if (position > -1 && position < this.length) { // {1}
+			let current: ListNode = this.head, // {2}
+				previous: ListNode, // {3}
+				index: number = 0; // {4}
+			//移除第一项
+			if (position === 0) { // {5}
+				this.head = current.next;
+			} else {
+				while (index++ < position) { // {6}
+					previous = current; // {7}
+					current = current.next; // {8}
+				}
+				//将previous与current的下一项链接起来：跳过current，从而移除它
+				previous.next = current.next; // {9}
+			}
+			this.length--; // {10}
+			return current.element;
+		} else {
+			return null; // {11}
+		}
+	}
+
+	public insert(position: number, element: any): boolean {
+		//检查越界值
+		if (position >= 0 && position <= this.length) { //{1}
+			let node: ListNode = new ListNode(element),
+				current: ListNode = this.head,
+				previous: ListNode,
+				index: number = 0;
+			if (position === 0) { //在第一个位置添加
+				node.next = current; //{2}
+				this.head = node;
+			} else {
+				while (index++ < position) { //{3}
+					previous = current;
+					current = current.next;
+				}
+				node.next = current; //{4}
+				previous.next = node; //{5}
+			}
+			this.length++; //更新列表的长度
+			return true;
+		} else {
+			return false; //{6}
+		}
+	}
+
+	public toString(): string {
+		let current: ListNode = this.head, //{1}
+			string: string = ''; //{2}
+		while (current) { //{3}
+			string += current.element + (current.next ? 'n' : '');//{4}
+			current = current.next; //{5}
+		}
+		return string; //{6}
+	}
+
+	public indexOf(element: any): number {
+		let current: ListNode = this.head, //{1}
+			index: number = -1;
+		while (current) { //{2}
+			if (element === current.element) {
+				return index; //{3}
+			}
+			index++; //{4}
+			current = current.next; //{5}
+		}
+		return -1;
+	}
+
+	public remove(element: any): ListNode {
+		let index: number = this.indexOf(element);
+		return this.removeAt(index);
+	}
+
+	public isEmpty(): boolean {
+		return this.length === 0;
+	}
+
+	public size(): number {
+		return this.length;
+	}
+
+	public getHead(): ListNode {
+		return this.head;
+	};
 }

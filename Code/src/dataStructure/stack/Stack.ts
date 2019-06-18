@@ -11,11 +11,11 @@ const CAPACITY: number = 10;
 class Stack<T> implements IStack<T> {
 
 	private elements: Array<T>;
-	private _size: number;
+	private _size: number = 0;
 
 	public constructor(capacity: number = CAPACITY) {
 		this.elements = new Array<T>(capacity);
-		this._size = 0;
+		// this._size = 0;
 	}
 
 	public push(o: T) {

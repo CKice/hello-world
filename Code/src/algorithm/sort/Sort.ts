@@ -361,8 +361,64 @@ class Sort {
 			if (num < 0) {
 				num = 0;
 			}
-			// bucketList.get(num).add(arr[i]);
+			buckets[num].push(arr[i]);
 		}
 
+		//桶内排序
+		for (let i: number = 0, len = buckets.length; i < len; i++) {
+			this.quick(buckets[i]);
+		}
+		let index: number = 0;
+		for (let bucket of buckets) {
+			for (let value of bucket) {
+				arr[index++] = value;
+			}
+		}
+	}
+
+	public static base(arr: number[]) {
+		let length = arr.length;
+
+		//最大值
+		let max = arr[0];
+		for (let i = 0; i < length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		//当前排序位置
+		let location = 1;
+
+		//桶列表
+		let buckets = new Array<Array<number>>();
+
+		//长度为10 装入余数0-9的数据
+		for (let i = 0; i < 10; i++) {
+			buckets.push(new Array<number>());
+		}
+
+		while (true) {
+			//判断是否排完
+			let dd: number = Math.pow(10, (location - 1));
+			if (max < dd) {
+				break;
+			}
+
+			//数据入桶
+			for (let i = 0; i < length; i++) {
+				//计算余数 放入相应的桶
+				let number = Math.floor((arr[i] / dd)) % 10;
+				buckets[number].push(arr[i]);
+			}
+
+			//写回数组
+			let index: number = 0;
+			for (let b in buckets) {
+				for (let value of buckets[b]) {
+					arr[index++] = value;
+				}
+				buckets[b] = [];
+			}
+		}
 	}
 }

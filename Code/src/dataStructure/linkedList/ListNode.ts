@@ -1,16 +1,18 @@
 class ListNode {
-	private _name: any;
+	private _element: any;
 	private _next: ListNode;
-	private _parent: ListNode
+	private _prev: ListNode
 	private _value: any
-	public constructor(name: any, value?: any) {
-		this._name = name;
-		// if(0)
-		this._value = name;
+	public constructor(element: any, value?: any) {
+		this._element = element;
+		if (value)
+			this._value = value;
+		else
+			this._value = element
 	}
 
-	public get name(): any {
-		return this._name;
+	public get element(): any {
+		return this._element;
 	}
 
 	public set next(node: ListNode) {
@@ -21,11 +23,15 @@ class ListNode {
 		return this._next;
 	}
 
-	public set parent(node: ListNode) {
-		this._parent = node
+	public set prev(node: ListNode) {
+		this._prev = node
 	}
 
-	public get parent(): ListNode {
-		return this._parent;
+	public get prev(): ListNode {
+		return this._prev;
+	}
+
+	public get value(): any {
+		return this._value;
 	}
 }
