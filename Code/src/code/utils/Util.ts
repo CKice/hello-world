@@ -52,11 +52,13 @@ class Util {
 	 * Base64转字符串
 	 * @param str 需解码的Base64
 	 */
-	decode(base64: string): string {
+	public static decode(base64: string): string {
 		// 对base64转编码
 		var decode = atob(base64);
 		// 编码转字符串
 		var str = decodeURI(decode);
 		return str;
+		// Math.pow
 	}
+
 }

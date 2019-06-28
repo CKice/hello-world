@@ -9,10 +9,11 @@ class Sort {
 	/**
 	 * 数组元素交换
 	 */
-	public static swap(arr: number[], min: number, i: number) {
-		let temp: number = arr[min];
-		arr[min] = arr[i];
-		arr[i] = temp;
+	public static swap(arr: number[], a: number, b: number) {
+		// let temp: number = arr[a];
+		// arr[a] = arr[b];
+		// arr[b] = temp;
+		[arr[a], arr[b]] = [arr[b], arr[a]];
 	}
 
 	/**
@@ -26,9 +27,10 @@ class Sort {
 		let flag: Boolean
 		for (let i: number = 0; i < len; i++) {
 			flag = true
-			for (let j: number = i; j < len - 1; j++) {
+			for (let j: number = 0; j < len - 1 - i; j++) {
 				if (arr[j + 1] < arr[j]) {
-					this.swap(arr, j + 1, j); flag = false
+					this.swap(arr, j + 1, j);
+					flag = false
 				};
 			}
 			if (flag) break;
@@ -109,7 +111,7 @@ class Sort {
 		}
 	}
 	//治
-	public static conquer(arr: number[], left: number, mid: number, right: number, temp: number[]) {
+	private static conquer(arr: number[], left: number, mid: number, right: number, temp: number[]) {
 		let i: number = left;//左序列指针
 		let j: number = mid + 1;//右序列指针
 		let t: number = 0;//临时数组指针
@@ -135,7 +137,7 @@ class Sort {
 		}
 	}
 	//自底向上
-	public static mergeBottomToUp(arr: number[]) {
+	private static mergeBottomToUp(arr: number[]) {
 		let len = arr.length;
 		let temp = arr.concat();
 		for (let size: number = 1; size < len; size = 2 * size) {//size子数组大小
@@ -173,7 +175,7 @@ class Sort {
 　　　15  30  17  46  56  90  95  82       56 > 46， 不需要交换，移动 j ， j = 3
 　　　　　　　　　　　　　　　      i  =  j = 3
     */
-	public static quick1(arr: number[], p: number, q: number) {
+	private static quick1(arr: number[], p: number, q: number) {
 		let i: number = p;
 		let j: number = q;
 		// Math.min(arr[0],arr[Math.floor(arr.length / 2)],arr[arr.length - 1]);//三数取中
@@ -198,7 +200,7 @@ class Sort {
 	}
 
 	//比较元素与基准元素交换       单边扫描
-	public static LeftToRight(arr: number[], left: number, right: number) {
+	private static LeftToRight(arr: number[], left: number, right: number) {
 		let mark: number = left,
 			i: number = left + 1,
 			j: number = right,
@@ -228,7 +230,7 @@ class Sort {
                     i = 3                                j = 3
 　  */
 	//左右元素相互交换，当左右元素相等时与基准元素交换     左右两边向中间靠近(双边扫描)
-	public static LeftRightToMid(arr: number[], left: number, right: number) {
+	private static LeftRightToMid(arr: number[], left: number, right: number) {
 		let i: number, j: number, temp: number;
 		if (left > right) return;
 		temp = arr[left]; //temp中存的就是基准数 
@@ -376,7 +378,10 @@ class Sort {
 		}
 	}
 
-	public static base(arr: number[]) {
+	/**
+	 * 基数排序
+	 */
+	public static radix(arr: number[]) {
 		let length = arr.length;
 
 		//最大值
@@ -419,6 +424,7 @@ class Sort {
 				}
 				buckets[b] = [];
 			}
+			location++;
 		}
 	}
 }

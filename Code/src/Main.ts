@@ -99,15 +99,20 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        // let ui = new Calendar()
-        // this.stage.addChild(ui);
-        // ui.showDate();
-        let arr = [64, 68, 34, 87, 78, 59, 68, 4, 7, 3, 6, 168, 979, 166, 478, 63, 74, 684, 34763]
-        // Sort.merge(arr)
-        // let arr = [2, 5, 7, 8, 8, 9, 6, 4, 7, 3, 6]
-        console.log(arr);
-        Sort.bucket(arr)
-        console.log(arr);
+        let avlt = new AVLT();
+        avlt.insert(70);
+        avlt.insert(50);
+        avlt.insert(80);
+        avlt.insert(72);
+        avlt.insert(90);
+        avlt.insert(75);
+        avlt.insert(73);
+        avlt.insert(74);
+        avlt.levelTraversal();
+        console.log(avlt.arr);
+        avlt.remove(73);
+        avlt.remove(80);
+        avlt.levelTraversal();
+        console.log(avlt.arr);
     }
-
 }
