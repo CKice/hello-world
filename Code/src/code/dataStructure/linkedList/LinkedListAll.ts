@@ -1,12 +1,12 @@
 class LinkedListAll {
     public length: number = 0;
-    public head: ListNode = null;
+    public head: LinkedListNode = null;
     public constructor() {
     }
 
     public push(element: string) {
-        let node: ListNode = new ListNode(element)　　　　　　　//构造新的元素节点
-        let current: ListNode;
+        let node: LinkedListNode = new LinkedListNode(element)　　　　　　　//构造新的元素节点
+        let current: LinkedListNode;
         if (this.head === null) {　　　　　　　　　　　　　     //头节点为空时  当前结点作为头节点
             this.head = node;
         } else {
@@ -20,9 +20,9 @@ class LinkedListAll {
     }
     public pop(position: number): string {
         if (position > -1 && position < length) {
-            let current: ListNode = this.head;
+            let current: LinkedListNode = this.head;
             let index: number = 0;
-            let previous: ListNode;
+            let previous: LinkedListNode;
             if (position == 0) {
                 this.head = current.next;
             } else {
@@ -40,10 +40,10 @@ class LinkedListAll {
     };
     public insert(position, element) {
         if (position > -1 && position <= this.length) {　　　　　　　　//校验边界
-            let node: ListNode = new ListNode(element);
-            let current: ListNode = this.head;
+            let node: LinkedListNode = new LinkedListNode(element);
+            let current: LinkedListNode = this.head;
             let index: number = 0;
-            let previous: ListNode;
+            let previous: LinkedListNode;
             if (position == 0) {　　　　　　　　　　　　　　　　　　　　//作为头节点，将新节点的next指向原有的头节点。
                 node.next = current;
                 this.head = node;　　　　　　　　　　　　　　　　　　　//新节点赋值给头节点
@@ -63,7 +63,7 @@ class LinkedListAll {
 
     };
     public toString(): string {
-        let current: ListNode = this.head;
+        let current: LinkedListNode = this.head;
         let string: string = '';
         while (current) {
             string += ',' + current.element;
@@ -72,7 +72,7 @@ class LinkedListAll {
         return string;
     };
     public indexFor(element): number {
-        let current: ListNode = this.head;
+        let current: LinkedListNode = this.head;
         let index: number = -1;
         while (current) {
             if (element === current.element) {　　　　　　　　　　　　//从头节点开始遍历
@@ -86,7 +86,7 @@ class LinkedListAll {
     public getLength(): number {
         return length;
     };
-    public getHead(): ListNode {
+    public getHead(): LinkedListNode {
         return this.head;
     };
     public isEmpty(): boolean {

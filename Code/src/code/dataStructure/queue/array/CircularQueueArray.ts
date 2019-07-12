@@ -1,48 +1,40 @@
 //循环队列
-class CircularQueue<T>{
-    private elements: Array<T>
-    private head: number;
-    private tail: number;
-    private capacity: number | undefined;
+class CircularQueueArray<T>{
+    private elements: Array<T>;
+    private head: number = -1;
+    private tail: number = -1;
 
     /** Initialize your elements structure here. Set the capacity of the queue to be k. */
-    public CircularQueue(capacity: number = CAPACITY) {
-        this.elements = new Array<T>();
-        this.head = -1;
-        this.tail = -1;
-        this.capacity = capacity;
+    public constructor(private capacity: number = CAPACITY) {
+        this.elements = new Array<T>(capacity);
     }
 
     /** Insert an element into the circular queue. Return true if the operation is successful. */
-    public in(value: T): boolean {
+    public enQueue(value: T) {
         if (this.isFull() == true) {
-            console.log("队列已满");
-            return false;
-        }
-        if (this.isEmpty() == true) {
-            this.head = 0;
+            console.log("OverFlow");
+            let temp = new Array<T>(this.capacity);
+            this.elements = this.elements.concat(temp);
+            this.capacity += this.capacity;
         }
         this.tail = (this.tail + 1) % this.capacity;
         this.elements[this.tail] = value;
-        return true;
+        console.log("添加：", value);
     }
 
     /** Delete an element from the circular queue. Return true if the operation is successful. */
-    public out(): T {
-        if (this.isEmpty() == true) {
-            return null;
+    public deQueue(): T {
+        if (this.isEmpty()) { console.log("UnderFlow"); return null; }
+        else {
+            let t = this.elements[this.head]
+            this.head = (this.head + 1) % this.capacity;
+            console.log("删除：", t);
+            return t;
         }
-        if (this.head == this.tail) {
-            this.head = -1;
-            this.tail = -1;
-            return null;
-        }
-        this.head = (this.head + 1) % this.capacity;
-        return null;
     }
 
     /** Get the front item from the queue. */
-    public front(): T {
+    public getHead(): T {
         if (this.isEmpty() == true) {
             return null;
         }
@@ -50,16 +42,16 @@ class CircularQueue<T>{
     }
 
     /** Get the last item from the queue. */
-    public rear(): T {
+    public getTail(): T {
         if (this.isEmpty() == true) {
             return null;
         }
-        return this.elements[this.tail];
+        return this.elements[this.tail - 1];
     }
 
     /** Checks whether the circular queue is empty or not. */
     public isEmpty(): boolean {
-        return this.head == -1;
+        return this.head == this.tail;
     }
 
     /** Checks whether the circular queue is full or not. */

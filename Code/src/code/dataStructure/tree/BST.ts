@@ -35,7 +35,7 @@ class BST {
         }
     }
 
-    public remove(key: any, node: TreeNode = this.root, ): TreeNode {
+    protected remove(key: any, node: TreeNode = this.root, ): TreeNode {
         if (node === null) {
             return null;
         }
@@ -67,15 +67,14 @@ class BST {
         }
     }
 
-    public search(key: any): boolean {
-        let node = this.root
-        if (node === null) {
+    public search(key: any, node: TreeNode = this.root): boolean {
+        if (node == null) {
             return false;
         }
         if (key < node.key) {
-            return this.search(key);
+            return this.search(key, node.left);
         } else if (key > node.key) {
-            return this.search(key);
+            return this.search(key, node.right);
         } else {
             // key is equal to node.item
             return true;
@@ -84,7 +83,7 @@ class BST {
 
     //先序遍历
     public arr: number[] = [];
-    public preOrderTraverse(node: TreeNode = this.root): any[] {
+    public preOrderTraverse(node: TreeNode = this.root): number[] {
         if (node == this.root) this.arr = [];
         if (node) {
             this.arr.push(node.key);
@@ -95,27 +94,29 @@ class BST {
     }
 
     //中序遍历
-    public inOrderTraverse(node: TreeNode = this.root) {
+    public inOrderTraverse(node: TreeNode = this.root): number[] {
         if (node == this.root) this.arr = [];
         if (node) {
             this.inOrderTraverse(node.left);
             this.arr.push(node.key);
             this.inOrderTraverse(node.right);
         }
+        return this.arr;
     }
 
     //后序遍历
-    public postOrderTraverse(node: TreeNode = this.root) {
+    public postOrderTraverse(node: TreeNode = this.root): number[] {
         if (node == this.root) this.arr = [];
         if (node) {
             this.postOrderTraverse(node.left);
             this.postOrderTraverse(node.right);
             this.arr.push(node.key);
         }
+        return this.arr;
     }
 
     //层次遍历
-    public levelTraversal(node: TreeNode = this.root) {
+    public levelTraversal(node: TreeNode = this.root): number[] {
         let queue = new Queue<TreeNode>();
         queue.enQueue(node);
         this.arr = [];
@@ -129,6 +130,7 @@ class BST {
                 queue.enQueue(node.right);
             }
         }
+        return this.arr;
     }
 
     public minNode(node: TreeNode = this.root): TreeNode {

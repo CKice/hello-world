@@ -1,5 +1,5 @@
 /**
- * Adelson-Velskii-Landi-Tree 自平衡二叉搜索树
+ * Adelson-Velskii-Landi-Tree 
  * 一种自平衡树。添加或移除节点时， AVL树会尝试自平衡。任意一个节点（不论深度）
  * 的左子树和右子树高度最多相差1。添加或移除节点时， AVL树会尽可能尝试转换为完全树。
  **/

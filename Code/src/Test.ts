@@ -130,7 +130,7 @@ class Test {
 		// console.log(Question.MinIDDC([1, 3, 2, 6], 1))
 		// console.log(Question.MinIDDC(nums, 1))
 		// console.log(Question.MinIDDC(nums1, 1))
-		console.log(Question.findUglyNumber(10))
+		// console.log(Question.findUglyNumber(10))
 		// console.log(nums);
 		// console.log(nums)
 	}

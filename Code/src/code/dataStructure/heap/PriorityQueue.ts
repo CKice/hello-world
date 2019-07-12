@@ -6,7 +6,7 @@ class PriorityQueue<T> {
 		this.elements = new Array<QueueElement<T>>();
 	}
 
-	public enqueue(element: T, priority: number) {
+	public in(element: T, priority: number) {
 		let queueElement = new QueueElement(element, priority);
 		if (this.isEmpty()) {
 			//当队列为空时，直接往队列中添加元素
@@ -30,7 +30,7 @@ class PriorityQueue<T> {
 		return this.elements[0].element;
 	}
 
-	public deQueue(): T {
+	public out(): T {
 		return this.elements.shift().element;
 	}
 

@@ -51,7 +51,7 @@ class RBT extends BST {
      * @param node TreeNode
      */
 	public rotationRR(node: TreeNode) {
-		const tmp = node.right;
+		let tmp = node.right;
 		node.right = tmp.left;
 		if (tmp.left && tmp.left.key) {
 			tmp.left.parent = node;
@@ -112,7 +112,6 @@ class RBT extends BST {
 			this.root.color = TreeColor.BLACK;
 		} else {
 			this.insertNode(this.root, key);
-			// this.fixTreeProperties(newNode);
 		}
 	}
 
@@ -138,13 +137,10 @@ class RBT extends BST {
 	private fixTreeProperties(node: TreeNode) {
 		while (node && node.parent && node.parent.color === TreeColor.RED && node.color !== TreeColor.BLACK) {
 			let parent = node.parent;
-			const grandParent = parent.parent;
-
+			let grandParent = parent.parent;
 			// case A
 			if (grandParent && grandParent.left === parent) {
-
-				const uncle = grandParent.right;
-
+				let uncle = grandParent.right;
 				// case 1: uncle of node is also red - only recoloring
 				if (uncle && uncle.color == TreeColor.RED) {
 					grandParent.color = TreeColor.RED;
@@ -168,8 +164,7 @@ class RBT extends BST {
 				}
 
 			} else { // case B: parent is right child of grand parent
-
-				const uncle = grandParent.left;
+				let uncle = grandParent.left;
 				uncle.color == TreeColor.RED
 				// case 1: uncle is read - only recoloring
 				if (uncle && uncle.color == TreeColor.RED) {
@@ -198,6 +193,33 @@ class RBT extends BST {
 	}
 
 	public remove(key: any, node: TreeNode = this.root): TreeNode {
-		return null;
+		if (node === null) {
+			return null;
+		}
+		if (key < node.key) {
+			node.left = this.remove(key, node.left);
+		} else if (key > node.key) {
+			node.right = this.remove(key, node.right);
+		} else { //键等于node.key
+			//第一种情况——一个叶节点
+			if (node.left === null && node.right === null) {
+				node = null;
+			} else if (node.left === null) {
+				//第二种情况——一个只有一个子节点的节点
+				node
+				node = node.right;
+			} else if (node.right === null) {
+				node = node.left;
+			} else {
+				//第三种情况——一个有两个子节点的节点
+				let aux = this.minNode(node.right);
+				node.key = aux.key;
+				node.right = this.remove(aux.key, node.right);
+			}
+		}
+
+		if (node == null) {
+			return node;
+		}
 	}
 }

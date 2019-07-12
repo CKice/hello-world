@@ -1,24 +1,24 @@
 interface ILinkedList {
 	append(element: any): boolean
 	insert(position: number, element: any): boolean
-	removeAt(position: number): ListNode
-	remove(element: any): ListNode;
+	removeAt(position: number): LinkedListNode
+	remove(element: any): LinkedListNode;
 	indexOf(element: number): number;
 	isEmpty(): boolean;
 	size(): number
-	getHead(): ListNode
+	getHead(): LinkedListNode
 	toString(): string;
 }
 
 class LinkedList implements ILinkedList {
-	private head: ListNode;
+	private head: LinkedListNode;
 	private length: number = 0;
 	public constructor() {
 
 	}
 	public append(element: any): boolean {
-		let node = new ListNode(element), //{1}
-			current: ListNode; //{2}
+		let node = new LinkedListNode(element), //{1}
+			current: LinkedListNode; //{2}
 		if (this.head === null) { //列表中第一个节点 //{3}
 			this.head = node;
 		} else {
@@ -34,11 +34,11 @@ class LinkedList implements ILinkedList {
 		return true;
 	}
 
-	public removeAt(position: number): ListNode {
+	public removeAt(position: number): LinkedListNode {
 		//检查越界值
 		if (position > -1 && position < this.length) { // {1}
-			let current: ListNode = this.head, // {2}
-				previous: ListNode, // {3}
+			let current: LinkedListNode = this.head, // {2}
+				previous: LinkedListNode, // {3}
 				index: number = 0; // {4}
 			//移除第一项
 			if (position === 0) { // {5}
@@ -61,9 +61,9 @@ class LinkedList implements ILinkedList {
 	public insert(position: number, element: any): boolean {
 		//检查越界值
 		if (position >= 0 && position <= this.length) { //{1}
-			let node: ListNode = new ListNode(element),
-				current: ListNode = this.head,
-				previous: ListNode,
+			let node: LinkedListNode = new LinkedListNode(element),
+				current: LinkedListNode = this.head,
+				previous: LinkedListNode,
 				index: number = 0;
 			if (position === 0) { //在第一个位置添加
 				node.next = current; //{2}
@@ -84,7 +84,7 @@ class LinkedList implements ILinkedList {
 	}
 
 	public toString(): string {
-		let current: ListNode = this.head, //{1}
+		let current: LinkedListNode = this.head, //{1}
 			string: string = ''; //{2}
 		while (current) { //{3}
 			string += current.element + (current.next ? 'n' : '');//{4}
@@ -94,7 +94,7 @@ class LinkedList implements ILinkedList {
 	}
 
 	public indexOf(element: any): number {
-		let current: ListNode = this.head, //{1}
+		let current: LinkedListNode = this.head, //{1}
 			index: number = -1;
 		while (current) { //{2}
 			if (element === current.element) {
@@ -106,7 +106,7 @@ class LinkedList implements ILinkedList {
 		return -1;
 	}
 
-	public remove(element: any): ListNode {
+	public remove(element: any): LinkedListNode {
 		let index: number = this.indexOf(element);
 		return this.removeAt(index);
 	}
@@ -119,7 +119,7 @@ class LinkedList implements ILinkedList {
 		return this.length;
 	}
 
-	public getHead(): ListNode {
+	public getHead(): LinkedListNode {
 		return this.head;
 	};
 }

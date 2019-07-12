@@ -1,12 +1,12 @@
 class CircularLinkedList {
 	private length: number = 0;
-	private head: ListNode = null;
+	private head: LinkedListNode = null;
 	public constructor() {
 	}
 
 	public append(element): boolean {
-		let node = new ListNode(element),
-			current: ListNode;
+		let node = new LinkedListNode(element),
+			current: LinkedListNode;
 		if (!this.head) {
 			this.head = node;
 			node.next = this.head;
@@ -24,10 +24,10 @@ class CircularLinkedList {
 
 	public insert(position, element): boolean {
 		if (position > -1 && position < this.length) {
-			let node: ListNode = new ListNode(element),
+			let node: LinkedListNode = new LinkedListNode(element),
 				index: number = 0,
-				current: ListNode = this.head,
-				previous: ListNode;
+				current: LinkedListNode = this.head,
+				previous: LinkedListNode;
 			if (position === 0) {
 				node.next = this.head;
 				this.head = node;

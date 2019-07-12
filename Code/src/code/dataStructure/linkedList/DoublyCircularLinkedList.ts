@@ -1,14 +1,14 @@
 class DoublyCircularLinkedList {
 	private length: number = 0;
-	private head: ListNode = null;
-	private tail: ListNode = null;
+	private head: LinkedListNode = null;
+	private tail: LinkedListNode = null;
 	public constructor() {
 	}
 
 	public append(element): boolean {
-		let node: ListNode = new ListNode(element),
-			current: ListNode,
-			previous: ListNode;
+		let node: LinkedListNode = new LinkedListNode(element),
+			current: LinkedListNode,
+			previous: LinkedListNode;
 		if (!this.head) {
 			this.head = node;
 			this.tail = node;
@@ -30,7 +30,7 @@ class DoublyCircularLinkedList {
 
 	public insert(position, element): boolean {
 		if (position >= 0 && position <= this.length) {
-			let node = new ListNode(element),
+			let node = new LinkedListNode(element),
 				index = 0,
 				current = this.head,
 				previous;

@@ -1,8 +1,8 @@
-class ListNode {
+class LinkedListNode {
 	private _element: any;
-	private _next: ListNode;
-	private _prev: ListNode
-	private _value: any
+	private _next: LinkedListNode;
+	private _prev: LinkedListNode
+	private _value: any;
 	public constructor(element: any, value?: any) {
 		this._element = element;
 		if (value)
@@ -15,19 +15,19 @@ class ListNode {
 		return this._element;
 	}
 
-	public set next(node: ListNode) {
+	public set next(node: LinkedListNode) {
 		this._next = node
 	}
 
-	public get next(): ListNode {
+	public get next(): LinkedListNode {
 		return this._next;
 	}
 
-	public set prev(node: ListNode) {
+	public set prev(node: LinkedListNode) {
 		this._prev = node
 	}
 
-	public get prev(): ListNode {
+	public get prev(): LinkedListNode {
 		return this._prev;
 	}
 

@@ -1,8 +1,8 @@
 interface IDoublyLinkedList {
     append(element: any): boolean
     insert(position: number, element: any): boolean
-    removeAt(position: number): ListNode
-    remove(element: any): ListNode;
+    removeAt(position: number): LinkedListNode
+    remove(element: any): LinkedListNode;
     indexOf(element: number): number;
     isEmpty(): boolean;
     size(): number
@@ -11,16 +11,16 @@ interface IDoublyLinkedList {
 }
 
 class DoublyLinkedList implements IDoublyLinkedList {
-    private head: ListNode = null;
-    private tail: ListNode = null;
+    private head: LinkedListNode = null;
+    private tail: LinkedListNode = null;
     private length: number = 0;
     public constructor() {
 
     }
     public append(element: any): boolean {
-        let node = new ListNode(element), //{1}
-            current: ListNode, //{2}
-            previous: ListNode;
+        let node = new LinkedListNode(element), //{1}
+            current: LinkedListNode, //{2}
+            previous: LinkedListNode;
         if (this.head === null) { //列表中第一个节点 //{3}
             this.head = node;
             this.tail = node;
@@ -44,11 +44,11 @@ class DoublyLinkedList implements IDoublyLinkedList {
         return true;
     }
 
-    public removeAt(position: number): ListNode {
+    public removeAt(position: number): LinkedListNode {
         //检查越界值
         if (position > -1 && position < this.length) {
-            let current: ListNode = this.head,
-                previous: ListNode,
+            let current: LinkedListNode = this.head,
+                previous: LinkedListNode,
                 index: number = 0;
             //移除第一项
             if (position === 0) {
@@ -82,9 +82,9 @@ class DoublyLinkedList implements IDoublyLinkedList {
     public insert(position: number, element: any): boolean {
         //检查越界值
         if (position >= 0 && position <= this.length) {
-            let node: ListNode = new ListNode(element),
-                current: ListNode = this.head,
-                previous: ListNode,
+            let node: LinkedListNode = new LinkedListNode(element),
+                current: LinkedListNode = this.head,
+                previous: LinkedListNode,
                 index: number = 0;
             if (position === 0) { //在第一个位置添加
                 if (!this.head) { //新增的 {1}
@@ -118,7 +118,7 @@ class DoublyLinkedList implements IDoublyLinkedList {
     }
 
     public toString(): string {
-        let current: ListNode = this.head, //{1}
+        let current: LinkedListNode = this.head, //{1}
             string: string = ''; //{2}
         while (current) { //{3}
             string += current.element + (current.next ? 'n' : '');//{4}
@@ -128,7 +128,7 @@ class DoublyLinkedList implements IDoublyLinkedList {
     }
 
     public indexOf(element: any): number {
-        let current: ListNode = this.head, //{1}
+        let current: LinkedListNode = this.head, //{1}
             index: number = -1;
         while (current) { //{2}
             if (element === current.element) {
@@ -140,7 +140,7 @@ class DoublyLinkedList implements IDoublyLinkedList {
         return -1;
     }
 
-    public remove(element: any): ListNode {
+    public remove(element: any): LinkedListNode {
         let index: number = this.indexOf(element);
         return this.removeAt(index);
     }

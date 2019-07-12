@@ -12,7 +12,6 @@ class SortTest {
 		arr = [11, 36, 874, 987, 12, 456, 789, 234, 851, 785, 658, 349, 645];
 		Sort.bubble(arr);
 		console.log(arr);
-		// if (1 == 1) { return; }
 
 		arr = [11, 36, 874, 987, 12, 456, 789, 234, 851, 785, 658, 349, 645];
 		Sort.insert(arr);

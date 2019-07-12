@@ -28,7 +28,7 @@ class HashMap {
 		let position = this.table[this.loseloseHashCode(key)];
 		if (this.table[position] !== undefined) { //{3}
 			//遍历链表来寻找键/值
-			let current: ListNode = this.table[position].getHead(); //{4}
+			let current: LinkedListNode = this.table[position].getHead(); //{4}
 			while (current.next) { //{5}
 				if (current.element.key === key) { //{6}
 					return current.element.value; //{7}
