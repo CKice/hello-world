@@ -22,7 +22,7 @@ class Sort {
 	 * 然后从从第二个元素开始，相邻两元素进行比较，将较大的元素放在右边，使得第二大的元素位于末尾前一位
 	 * 如此循环，直到整个数组排序完成 
 	 */
-	public static bubble(arr: number[]) {
+	public static bubble(arr: number[]): number[] {
 		let len: number = arr.length;
 		let flag: Boolean
 		for (let i: number = 0; i < len; i++) {
@@ -35,6 +35,7 @@ class Sort {
 			}
 			if (flag) break;
 		}
+		return arr
 	}
 
 	/**
